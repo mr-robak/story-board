@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHomepages } from "../../store/homepages/actions";
 
-import { selectAllPages } from "../../store/homepages/selectors";
+import { selectAllPages, selectLoading } from "../../store/homepages/selectors";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  // const [user, setUser] = useState("");
   const dispatch = useDispatch();
 
+  const loading = useSelector(selectLoading);
   const homepages = useSelector(selectAllPages);
 
   useEffect(() => {
@@ -16,10 +16,10 @@ export default function Home() {
   }, [dispatch]);
 
   const renderTitles = () => {
-    if (homepages.loading) {
+    if (loading) {
       return null;
     } else {
-      return homepages.pages.map((page) => {
+      return homepages.map((page) => {
         const { backgroundColor, color, title, id, description } = page;
         return (
           <div style={{ backgroundColor, color }}>

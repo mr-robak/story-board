@@ -1,9 +1,13 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 
-export const pagesLoading = () => ({ type: "PAGES LOADING" });
+export const pagesLoading = () => ({ type: "PAGES_LOADING" });
 export const pagesFetched = (data) => ({
-  type: "PAGES FETCHED",
+  type: "PAGES_FETCHED",
+  payload: data,
+});
+export const pageFetched = (data) => ({
+  type: "DETAILS_PAGE_FETCHED",
   payload: data,
 });
 
@@ -24,7 +28,7 @@ export function fetchPageWithStories(id) {
       dispatch(pagesLoading());
       const response = await axios.get(`${apiUrl}/homepages/${id}`);
       console.log("fetch response data:", response.data);
-      dispatch(pagesFetched(response.data));
+      dispatch(pageFetched(response.data));
     } catch (error) {
       console.log(error);
     }
