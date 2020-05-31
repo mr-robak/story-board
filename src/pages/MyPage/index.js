@@ -85,7 +85,7 @@ export default function MyPage() {
       {editing ? (
         <EditPage resetEdit={resetEdit} />
       ) : posting ? (
-        <PostStory />
+        <PostStory resetEdit={resetEdit} />
       ) : (
         renderMyPage()
       )}
