@@ -76,7 +76,15 @@ export default function EditPage(props) {
           />
         </label>
         <br />
-        <input className="button" type="submit" value="Submit" />
+        <input className="button" type="submit" value="Submit" />{" "}
+        <input
+          className="button"
+          type="button"
+          value="Cancel"
+          onClick={() => {
+            resetEdit();
+          }}
+        />
       </form>
     </div>
   );

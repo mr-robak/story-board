@@ -73,3 +73,32 @@ export function updateHomePage(formData) {
     }
   };
 }
+
+export const addStory = (story) => ({
+  type: "POST_A_STORY",
+  payload: { ...story },
+});
+
+export function postAStory(formData) {
+  return async (dispatch, getState) => {
+    try {
+      dispatch(appLoading());
+      const user = selectUser(getState());
+      // console.log(user);
+      const response = await axios.post(
+        `${apiUrl}/homepages/${user.homepage.id}`,
+        { ...formData },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      // console.log("response.data", response.data);
+      dispatch(addStory(response.data));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

@@ -56,19 +56,20 @@ export default function MyPage() {
         >
           Post a story
         </button>
-        {stories
-          .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
-          .map((story) => {
-            const { id, name, content, imageUrl, createdAt } = story;
-            return (
-              <div key={id}>
-                <h4>{name}</h4>
-                <img src={imageUrl} alt={name} />
-                <p>{content}</p>
-                <p>Created: {createdAt}</p>
-              </div>
-            );
-          })}
+        {stories &&
+          stories
+            .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
+            .map((story) => {
+              const { id, name, content, imageUrl, createdAt } = story;
+              return (
+                <div key={id}>
+                  <h4>{name}</h4>
+                  <img src={imageUrl} alt={name} />
+                  <p>{content}</p>
+                  <p>Created: {createdAt}</p>
+                </div>
+              );
+            })}
       </div>
     );
   };

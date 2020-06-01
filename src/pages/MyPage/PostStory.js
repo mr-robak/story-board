@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
-import { updateHomePage } from "../../store/homepages/actions";
+import { postAStory } from "../../store/homepages/actions";
 
 export default function PostStory(props) {
   const { resetEdit } = props;
@@ -15,8 +15,8 @@ export default function PostStory(props) {
   const submitForm = (e) => {
     e.preventDefault();
     // console.log("form submited");
-    // dispatch(updateHomePage(formData));
-    // resetEdit();
+    dispatch(postAStory(formData));
+    resetEdit();
   };
 
   const formInputHandler = (e) => {
@@ -65,7 +65,15 @@ export default function PostStory(props) {
           />
         </label>
         <br />
-        <input className="button" type="submit" value="Submit" />
+        <input className="button" type="submit" />
+        <input
+          className="button"
+          type="button"
+          value="Cancel"
+          onClick={() => {
+            resetEdit();
+          }}
+        />
       </form>
       {formData.imageUrl && <img src={formData.imageUrl} alt="preview" />}
     </div>

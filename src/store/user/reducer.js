@@ -30,6 +30,17 @@ export default (state = initialState, action) => {
           ...action.payload,
         },
       };
+    case "POST_A_STORY":
+      // console.log("POST_A_STORY");
+      // console.log("action.payload", action.payload);
+
+      return {
+        ...state,
+        homepage: {
+          ...state.homepage,
+          stories: [{ ...action.payload }, ...state.homepage.stories],
+        },
+      };
 
     default:
       return state;
