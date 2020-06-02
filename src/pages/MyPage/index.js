@@ -30,7 +30,7 @@ export default function MyPage() {
     return <Loading />;
   }
 
-  const resetEdit = () => {
+  const cancelEdit = () => {
     setEditing(false);
     setPosting(false);
   };
@@ -84,9 +84,9 @@ export default function MyPage() {
       </div>
 
       {editing ? (
-        <EditPage resetEdit={resetEdit} />
+        <EditPage cancelEdit={cancelEdit} />
       ) : posting ? (
-        <PostStory resetEdit={resetEdit} />
+        <PostStory cancelEdit={cancelEdit} />
       ) : (
         renderMyPage()
       )}

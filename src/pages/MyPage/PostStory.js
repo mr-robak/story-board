@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectUser } from "../../store/user/selectors";
+import { useDispatch } from "react-redux";
 import { postAStory } from "../../store/homepages/actions";
 
 export default function PostStory(props) {
-  const { resetEdit } = props;
+  const { cancelEdit } = props;
   const [formData, setFormData] = useState({
     name: "",
     content: "",
@@ -16,7 +15,7 @@ export default function PostStory(props) {
     e.preventDefault();
     // console.log("form submited");
     dispatch(postAStory(formData));
-    resetEdit();
+    cancelEdit();
   };
 
   const formInputHandler = (e) => {
@@ -71,7 +70,7 @@ export default function PostStory(props) {
           type="button"
           value="Cancel"
           onClick={() => {
-            resetEdit();
+            cancelEdit();
           }}
         />
       </form>

@@ -5,7 +5,7 @@ import { selectUser } from "../../store/user/selectors";
 import { updateHomePage } from "../../store/homepages/actions";
 
 export default function EditPage(props) {
-  const { resetEdit } = props;
+  const { cancelEdit } = props;
   const {
     homepage: { id, title, description, backgroundColor, color },
   } = useSelector(selectUser);
@@ -22,7 +22,7 @@ export default function EditPage(props) {
     e.preventDefault();
     // console.log("form submited");
     dispatch(updateHomePage(formData));
-    resetEdit();
+    cancelEdit();
   };
 
   const formInputHandler = (e) => {
@@ -82,7 +82,7 @@ export default function EditPage(props) {
           type="button"
           value="Cancel"
           onClick={() => {
-            resetEdit();
+            cancelEdit();
           }}
         />
       </form>

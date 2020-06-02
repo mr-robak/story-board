@@ -2,6 +2,7 @@ import { apiUrl } from "../../config/constants";
 import axios from "axios";
 import { appLoading, appDoneLoading } from "../appState/actions";
 import { selectUser } from "../user/selectors";
+import { showMessageWithTimeout } from "../appState/actions";
 
 export const pagesLoading = () => ({ type: "PAGES_LOADING" });
 export const pagesFetched = (data) => ({
@@ -33,7 +34,7 @@ export function fetchPageWithStories(id) {
       dispatch(appLoading());
 
       const response = await axios.get(`${apiUrl}/homepages/${id}`);
-      console.log("fetch response data:", response.data);
+      // console.log("fetch response data:", response.data);
       dispatch(pageFetched(response.data));
       dispatch(appDoneLoading());
     } catch (error) {
@@ -96,6 +97,7 @@ export function postAStory(formData) {
       );
       // console.log("response.data", response.data);
       dispatch(addStory(response.data));
+      dispatch(showMessageWithTimeout("success", true, "New story posted!"));
       dispatch(appDoneLoading());
     } catch (error) {
       console.log(error);

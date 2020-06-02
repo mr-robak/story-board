@@ -115,12 +115,12 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                               | Points |
 | ---------------------------------------------------------------------- | ------ |
-| Server contains sequelize models for Homepage & Story                  | 2      |
-| Server contains migrations to create homepages and stories tables      | 2      |
-| title in homepage and name in story are validated in model & migration | 2      |
-| User, Homepage and Story models are correctly related                  | 2      |
-| Seeders are present to create at least 2 homepages and 4 stories       | 2      |
-| Total                                                                  | 10     |
+| Server contains sequelize models for Homepage & Story                  | 2      | v |
+| Server contains migrations to create homepages and stories tables      | 2      | v |
+| title in homepage and name in story are validated in model & migration | 2      | ??? |
+| User, Homepage and Story models are correctly related                  | 2      | v |
+| Seeders are present to create at least 2 homepages and 4 stories       | 2      | v |
+| Total                                                                  | 10     | 8 |
 
 ## Features
 
@@ -132,13 +132,13 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                   | Points |
 | -------------------------------------------------------------------------- | ------ |
-| The frontend route `/` displays a list of homepages                        | 1      |
-| The homepages are fetched from the server                                  | 1      |
-| The homepages have a backgroundColor and color as specified by their users | 1      |
-| An array of homepages is stored and managed by redux                       | 1      |
-| A selectors and actions are defined in a seperate files                    | 1      |
-| Each homepage has a `Visit page` button, it links to a homepage's details  | 1      |
-| Total                                                                      | 6      |
+| The frontend route `/` displays a list of homepages                        | 1      | v |
+| The homepages are fetched from the server                                  | 1      | v |
+| The homepages have a backgroundColor and color as specified by their users | 1      | v |
+| An array of homepages is stored and managed by redux                       | 1      | v |
+| A selectors and actions are defined in a seperate files                    | 1      | v |
+| Each homepage has a `Visit page` button, it links to a homepage's details  | 1      | v |
+| Total                                                                      | 6      | 6 |
 
 ### 2. As a user interested in people's lives, I want to read people's stories, so I can be informed
 
@@ -147,13 +147,13 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                  | Points |
 | ------------------------------------------------------------------------- | ------ |
-| The frontend route `/homepages/:id` displays a detail page for a homepage | 1      |
-| The stories are displayed with a name, description and an image           | 1      |
-| The homepage and its stories are fetched from the server                  | 1      |
-| The homepage and its stories are queried from the database using 1 query  | 1      |
-| The homepage has a backgroundColor and color as specified by their user   | 1      |
-| The stories are displayed in order, from newest to oldest (`createdAt`)   | 2      |
-| Total                                                                     | 7      |
+| The frontend route `/homepages/:id` displays a detail page for a homepage | 1      | v |
+| The stories are displayed with a name, description and an image           | 1      | v |
+| The homepage and its stories are fetched from the server                  | 1      | v |
+| The homepage and its stories are queried from the database using 1 query  | 1      | v |
+| The homepage has a backgroundColor and color as specified by their user   | 1      | v |
+| The stories are displayed in order, from newest to oldest (`createdAt`)   | 2      | v |
+| Total                                                                     | 7      | 7 |
 
 ### 3. As a logged in user I want to be able to view my page
 
@@ -165,12 +165,12 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                   | Points |
 | -------------------------------------------------------------------------- | ------ |
-| You see a `My page` link in the navbar (but only when you're logged in)    | 1      |
-| When you click `My page` you see your homepage and your stories            | 1      |
-| The homepage and its stories are fetched from the server                   | 1      |
-| Your homepage & stories are fetched using the `/me` and `/login` endpoints | 2      |
-| Your homepage's details are managed by redux                               | 2      |
-| Total                                                                      | 7      |
+| You see a `My page` link in the navbar (but only when you're logged in)    | 1      | v |
+| When you click `My page` you see your homepage and your stories            | 1      | v |
+| The homepage and its stories are fetched from the server                   | 1      | v |
+| Your homepage & stories are fetched using the `/me` and `/login` endpoints | 2      | v |
+| Your homepage's details are managed by redux                               | 2      | v |
+| Total                                                                      | 7      | 7 |
 
 ### 4. As a user signing up I want a homepage to be created for me
 
@@ -184,12 +184,12 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                  | Points |
 | ------------------------------------------------------------------------- | ------ |
-| When a user sign's up a homepage is created ands saved to the database    | 1      |
-| The new homepage is assigned the userId of the user that just signed up   | 1      |
-| The new homepage has values for title, backgroundColor and color          | 1      |
-| The homepage is sent in the response of `/signup` along with the new user | 1      |
-| The homepage is stored in the redux store in the frontend                 | 1      |
-| Total                                                                     | 5      |
+| When a user sign's up a homepage is created ands saved to the database    | 1      | v |
+| The new homepage is assigned the userId of the user that just signed up   | 1      | v |
+| The new homepage has values for title, backgroundColor and color          | 1      | v |
+| The homepage is sent in the response of `/signup` along with the new user | 1      | v |
+| The homepage is stored in the redux store in the frontend                 | 1      | v |
+| Total                                                                     | 5      | 5 |
 
 ### 5. As a logged in user I want to be able to post stories on homepage, so I can share my adventures with the world
 
@@ -200,18 +200,18 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                | Points |
 | ----------------------------------------------------------------------- | ------ |
-| There is a button with `Post a cool story bro` on `My page`             | 0.5    |
-| Clicking the button makes a form appear                                 | 1      |
-| The form has inputs for name, content and imageUrl                      | 0.5    |
-| When a user enters an imageUrl, they can see a preview of the image     | 1      |
-| When the form is submitted a POST request is sent to the server         | 1      |
-| An Authorization header is set in the request                           | 1      |
-| The auth middleware is used on the server side to authorize the request | 1      |
-| The POST request updates the database with input from the user          | 1      |
-| The story saved in the database has the correct `homepageId`            | 1      |
-| The user sees a success message if the story was posted successfully    | 1      |
+| There is a button with `Post a cool story bro` on `My page`             | 0.5    | v |
+| Clicking the button makes a form appear                                 | 1      | v |
+| The form has inputs for name, content and imageUrl                      | 0.5    | v |
+| When a user enters an imageUrl, they can see a preview of the image     | 1      | v |
+| When the form is submitted a POST request is sent to the server         | 1      | v |
+| An Authorization header is set in the request                           | 1      | v |
+| The auth middleware is used on the server side to authorize the request | 1      | v |
+| The POST request updates the database with input from the user          | 1      | v |
+| The story saved in the database has the correct `homepageId`            | 1      | v |
+| The user sees a success message if the story was posted successfully    | 1      | ??? |
 | The success message is an alert, confirm or prompt popup or console.log | -1     |
-| Total                                                                   | 9      |
+| Total                                                                   | 9      | 8 |
 
 ### 6. As a logged in user I want to be able to edit my homepage, so I can express myself
 
@@ -224,16 +224,16 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                 | Points |
 | ------------------------------------------------------------------------ | ------ |
-| There is a button with `Edit my page` on `My page`                       | 0.5    |
-| Clicking the button makes a form appear                                  | 1      |
-| The form has inputs for title, description, color and background color   | 0.5    |
-| The values in the form start as the current values for your homepage     | 2      |
-| When the form is submitted a PATCH request is sent to the server         | 1      |
-| An Authorization header is set in the request                            | 1      |
-| The auth middleware is used on the server side to authorize the request  | 1      |
-| The PATCH request updates the database with input from the user          | 1      |
-| The user can see the results of their update without refreshing the page | 2      |
-| Total                                                                    | 10     |
+| There is a button with `Edit my page` on `My page`                       | 0.5    | v |
+| Clicking the button makes a form appear                                  | 1      | v |
+| The form has inputs for title, description, color and background color   | 0.5    | v |
+| The values in the form start as the current values for your homepage     | 2      | v |
+| When the form is submitted a PATCH request is sent to the server         | 1      | v |
+| An Authorization header is set in the request                            | 1      | v |
+| The auth middleware is used on the server side to authorize the request  | 1      | v |
+| The PATCH request updates the database with input from the user          | 1      | v |
+| The user can see the results of their update without refreshing the page | 2      | v |
+| Total                                                                    | 10     | 10 |
 
 ### 7. Finishing up
 
@@ -245,11 +245,11 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                   | Points |
 | -------------------------------------------------------------------------- | ------ |
-| Student performed an accurate self assessment (max off by + or - 7 points) | 2      |
-| Student can reflect on their process by writing a reflection of ~200 words | 2      |
-| Student has regularly committed changes (at least 1 commit per feature)    | 1      |
-| Student has pushed their repository using git                              | 1      |
-| Total                                                                      | 6      |
+| Student performed an accurate self assessment (max off by + or - 7 points) | 2      | v |
+| Student can reflect on their process by writing a reflection of ~200 words | 2      | v |
+| Student has regularly committed changes (at least 1 commit per feature)    | 1      | v |
+| Student has pushed their repository using git                              | 1      | v |
+| Total                                                                      | 6      | 6 |
 
 ### Self assessment
 

@@ -33,12 +33,14 @@ export default (state = initialState, action) => {
     case "POST_A_STORY":
       // console.log("POST_A_STORY");
       // console.log("action.payload", action.payload);
-
+      const newStories = state.homepage.stories
+        ? [{ ...action.payload }, ...state.homepage.stories]
+        : [{ ...action.payload }];
       return {
         ...state,
         homepage: {
           ...state.homepage,
-          stories: [{ ...action.payload }, ...state.homepage.stories],
+          stories: newStories,
         },
       };
 
